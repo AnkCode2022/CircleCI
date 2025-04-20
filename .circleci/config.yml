@@ -1,12 +1,14 @@
 version: 2.1
 
-executors:
-  python-executor:
+jobs:
+  build:
     docker:
-      - image: circleci/python:3.11
+      - image: circleci/python:3.8
     steps:
       - checkout
-      - run: python main.py
+      - run: python3 main.py
+      - run: echo "Build completed successfully!"
+      - run: echo "This is a sample CircleCI configuration file."
 
 workflows:
   build_now:
