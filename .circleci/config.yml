@@ -1,0 +1,14 @@
+version: 2.1
+
+executors:
+  python-executor:
+    docker:
+      - image: circleci/python:3.11
+    steps:
+      - checkout
+      - run: python main.py
+
+workflows:
+  build_now:
+    jobs:
+      - build
